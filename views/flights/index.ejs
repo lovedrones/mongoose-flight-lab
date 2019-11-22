@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<h2> <%= title %> </h2>
 <img src="/images/flight.jpg"></img>
 
         <table>
@@ -7,6 +8,7 @@
                     <th>Airline</th>
                     <th>Flight Number</th>
                     <th>Departure Time</th>
+                    <th>Destination</th>
                 </tr>
             </thead>
     <tbody>
@@ -14,10 +16,12 @@
         <% flights.forEach(function(f) { %>
             <td> <%= f.airline %> </td> 
              <td> <%= f.flightNo %></td> 
-             <td> <%= f.departs %></td> 
-            
-        <% }); %>
-    </tr>
+             <td> <%= f.departs.toUTCString() %></td> 
+             <td> <%= f.airport %></td> 
+          <td> <a href="/flights/<%= f._id %>"><button>Details</button></a></td> 
+        </tr>
+             <% }); %>
+   
     </tbody>
     </table>
     

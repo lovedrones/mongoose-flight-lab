@@ -17,8 +17,10 @@ body {
 body > nav {
   grid-area: nav;
   background-color: #B8C0C2;
+  border-bottom: solid 3px rgb(57, 90, 100);
   display: flex;
   justify-content: flex-end;
+  height: 60px;
   align-items: center;
   padding: 0 25px 0 40px;
 }
@@ -26,8 +28,10 @@ nav > h1 {
  object-fit: contain;
   margin-right: auto;
   color: rgb(252,82,94);
+  font-family: 'Monoton', cursive;
   margin-left: 0%;
   padding: 0%;
+  font-size: 50px;
 }
 a {
   color: white;
@@ -35,14 +39,37 @@ a {
   padding-right: 30px;
 }
 h2 {
-  margin-left: 5%;
+  padding-top: 10px;
+  margin-left: 20%;
+  font-size: 30px;
 }
 img {
   border: solid 4px rgb(252, 82,94);
   border-radius: 20px;
   margin-bottom: 20px;
+  margin-left: 28px;
 
  }
+
+ #new-form {
+   margin-left: 18%;
+ }
+
+ #new-form *,
+ #add-review-form *,
+ #add-ticket-form * {
+   font-size: 20px;
+
+ }
+ #add-review-form,
+ #add-ticket-form {
+   display: grid;
+ }	
+ 
+ #add-review-form input[type="submit"],
+ #add-ticket-form input[type="submit"] {
+   width: 10rem;
+ }	
 
 table {
   font-size: 20px;
@@ -50,13 +77,20 @@ table {
  }
 
 table thead th {
-  padding: 0 25px 0 40px;
+  padding: 0 50px 0 50px;
   border-bottom: 2px solid #424748;
-  margin-left: 30%;
+  margin-left: 40%;
 }
 
 table td {
-  padding: 20px;
+  padding: 0 65px 0 65px;
+}
+td button { 
+  background-color: rgb(252, 82,94);
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 #list td:nth-child(2), #list td:nth-child(3){
