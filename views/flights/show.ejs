@@ -86,17 +86,10 @@
                   <%})%>
               </tbody>
           </table>
-          <form method="POST" action="/flights/<%= flight._id %>?_method=PUT>
-            <label>Seat
-                <input id="add-ticket" name="seat" type="text" required pattern="[A-F][1-9]\d?">
-            </label>    
-            <label>Price
-                <input name="price" type="text">
-            </label>
-            <input type="submit" value="Add Ticket">
-        </form>
-        <a href="<%= flight._id %>/tickets/new"> <button>Tickets</button></a>
-  </section>
+          
+        <a href="<%= flight._id %>/tickets/new"> <button>Add Tickets</button></a>
+<button method="DELETE" action="/flights/<%= flight._id %>?_method=DELETE">Delete Flight</button>
+        
  <!-- create and link detail button  -->
 
 <%- include('../partials/footer') %>

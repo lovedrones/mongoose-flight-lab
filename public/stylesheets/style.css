@@ -51,23 +51,31 @@ img {
 
  }
 
+ #bookpic {
+  height: 50%;
+  width: 50%;
+  margin-left: 3%;
+}
+
  #new-form {
-   margin-left: 18%;
+   margin-left: 15%;
+
  }
 
  #new-form *,
- #add-review-form *,
- #add-ticket-form * {
+ #ticket-form * {
    font-size: 20px;
+}
 
- }
- #add-review-form,
- #add-ticket-form {
+ #ticket-form {
    display: grid;
+   margin-top: 5%;
+   margin-left: 5%;
  }	
  
- #add-review-form input[type="submit"],
- #add-ticket-form input[type="submit"] {
+
+ #ticket-form input[type="submit"] {
+   margin-left: 10%;
    width: 10rem;
  }	
 

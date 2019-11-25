@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
-
-<form action="/flights/<%= flightId %>/tickets" method=POST>
+<h2><%= title %></h2>
+<img id="bookpic" src="/images/boardpass.png"></img>
+<form id="ticket-form" action="/flights/<%= flightId %>/tickets" method=POST>
   <label>Seat
       <input id="add-ticket" name="seat" type="text" required pattern="[A-F][1-9]\d?">
   </label>    
