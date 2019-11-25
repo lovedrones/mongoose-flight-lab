@@ -20,9 +20,9 @@ body > nav {
   border-bottom: solid 3px rgb(57, 90, 100);
   display: flex;
   justify-content: flex-end;
-  height: 60px;
+  height: 80px;
   align-items: center;
-  padding: 0 25px 0 40px;
+  padding: 0px 25px 0px 40px;
 }
 nav > h1 {
  object-fit: contain;
@@ -77,13 +77,13 @@ table {
  }
 
 table thead th {
-  padding: 0 50px 0 50px;
+  padding: 0 50px 0 70px;
   border-bottom: 2px solid #424748;
-  margin-left: 40%;
+  
 }
 
 table td {
-  padding: 0 65px 0 65px;
+  padding: 0 50px 0 65px;
 }
 td button { 
   background-color: rgb(252, 82,94);
@@ -91,6 +91,7 @@ td button {
   font-weight: bold;
   border-radius: 8px;
   padding: 8px;
+
 }
 
 #list td:nth-child(2), #list td:nth-child(3){

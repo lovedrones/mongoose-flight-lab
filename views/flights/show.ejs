@@ -1,28 +1,102 @@
 <%- include('../partials/header') %>
+<h2> <%= title %> </h2>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Flight Information
+            </th>
+        </tr>
+    </thead>
+    <tr>
 
-<% if (flights.destination.length) { %>
-  <h2> <%= title %> </h2>
+        <th>Airline:</th>
+        <td><%=flight.airline%></td>
+    </tr>
+    <tr>
+        <th>FlightNo:</th>
+        <td><%=flight.flightNo%></td>
+    </tr>
+    <tr>
+        <th>Departs:</th>
+        <td><%= flight.departs.toUTCString() %></td>
+    </tr>
+    <tr>
+        <th>Departure Airport:</th>
+        <td><%=flight.airport%></td>
+    </tr>
+</table><br><br>
+<br><br>
+
   <table>
     <thead>
       <tr>
-        <th>Date</th>
+        <th>Arrival Date</th>
         <th>Airport</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
-      <% destinations.forEach(function(r) { %>
         <tr>
+      <% flight.destinations.forEach(function(r) { %>
+        
           <td> <%= r.arrival.toLocaleDateString() %> </td>
-          <td> <%= r.aiport %> </td>
+          <td> <%= r.airport %> </td>
         
         </tr>
       <% }); %>
+
     </tbody>
   </table>
-<% } else { %>
-  <h5>No Reviews Yet</h5>
-<% } %>
-/* create and link detail button */
+  <h3>Update Arrival Details</h3>
+  <form method="POST" action="/flights/<%= flight._id %>?_method=PUT">
+      <label>Airport:
+              <select name="airport">
+                  <option value="AUS">Austin</option>
+                  <option value="DAL">Dallas</option>
+                  <option value="LAX">Los Angeles</option>
+                  <option value="SAN">San Diego</option>
+                  <option value="SEA">Seattle</option>
+              </select>
+          </label><br>
+          <label>Arrival Date
+              <input type="datetime-local" name="arrival">
+          </label>
+          <input type="submit" value="Add Arrival">
+  </form>
+  <section>
+    
+      <br><br>
+          <table>
+              <thead >
+                  <tr>
+                      <th>Seat</th>
+                      <th>Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <%tickets.forEach(function(t){%>
+                  <tr>
+                      <td>
+                          <%=t.seat%>
+                      </td>
+                      <td>
+                          <%=t.price%>
+                      </td>
+                  </tr>
+                  <%})%>
+              </tbody>
+          </table>
+          <form method="POST" action="/flights/<%= flight._id %>?_method=PUT>
+            <label>Seat
+                <input id="add-ticket" name="seat" type="text" required pattern="[A-F][1-9]\d?">
+            </label>    
+            <label>Price
+                <input name="price" type="text">
+            </label>
+            <input type="submit" value="Add Ticket">
+        </form>
+        <a href="<%= flight._id %>/tickets/new"> <button>Tickets</button></a>
+  </section>
+ <!-- create and link detail button  -->
 
 <%- include('../partials/footer') %>
