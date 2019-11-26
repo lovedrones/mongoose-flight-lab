@@ -88,7 +88,8 @@
           </table>
           
         <a href="<%= flight._id %>/tickets/new"> <button>Add Tickets</button></a>
-<button method="DELETE" action="/flights/<%= flight._id %>?_method=DELETE">Delete Flight</button>
+<form method="POST" action="/flights/<%= flight._id %>?_method=DELETE" >
+<button style="background-color: red;">Delete Flight</button></form>
         
  <!-- create and link detail button  -->
 
